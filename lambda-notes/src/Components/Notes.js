@@ -9,19 +9,28 @@ const StyledNotes = styled.section`
   flex-wrap: wrap;
 `;
 
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Notes = props => {
   return (
-    <StyledNotes>
-      {props.notes.map(n => (
-        <Note
-          notes={n}
-          key={n._id}
-          title={n.title}
-          tags={n.tags}
-          content={n.textBody}
-        />
-      ))}
-    </StyledNotes>
+    <FlexContainer>
+      <h2>Your Notes:</h2>
+      <StyledNotes>
+        {props.notes.map(n => (
+          <Note
+            notes={n}
+            key={n._id}
+            title={n.title}
+            tags={n.tags}
+            content={n.textBody}
+          />
+        ))}
+      </StyledNotes>
+    </FlexContainer>
   );
 };
 

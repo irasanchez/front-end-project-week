@@ -20,11 +20,11 @@ Pseudocode and other notes
 *************************
 
 -Nav.js
--- rendered in views not App.js for styling
+-- don't forget to remove border or correct it
 -- NavLink View Your Notes 
 --- Opens ListView
 -- NavLink + Create New Note
---- 
+---
 
 
 ************************* 
