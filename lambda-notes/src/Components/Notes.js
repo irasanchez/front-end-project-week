@@ -1,9 +1,17 @@
 import React from "react";
+import styled from "styled-components";
+
 import Note from "./Note";
+
+const StyledNotes = styled.section`
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Notes = props => {
   return (
-    <section className="notes">
+    <StyledNotes>
       {props.notes.map(n => (
         <Note
           notes={n}
@@ -13,7 +21,7 @@ const Notes = props => {
           content={n.textBody}
         />
       ))}
-    </section>
+    </StyledNotes>
   );
 };
 

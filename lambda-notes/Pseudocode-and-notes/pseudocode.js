@@ -4,6 +4,14 @@ Pseudocode and other notes
  ************************* 
  *************************
  
+- dependencies
+-- yarn add reactstrap bootstrap
+-- yarn add prop-types
+-- yarn add react-router-dom
+-- yarn add styled-components
+
+
+ *************************
 - App.js
 -- pass props
 --- notes={this.state.notes}

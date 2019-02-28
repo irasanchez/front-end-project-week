@@ -1,11 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+
+const StyledNote = styled.section`
+  width: 30%;
+`;
 
 const Note = props => {
   return (
-    <section className="note">
+    <StyledNote>
       <h2>{props.title}</h2>
       <p>{props.content}</p>
-    </section>
+    </StyledNote>
   );
 };
 

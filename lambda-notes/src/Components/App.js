@@ -3,6 +3,8 @@ import axios from "axios";
 
 import ListView from "../Views/ListView";
 
+import "../Styles/index.css";
+
 class App extends Component {
   constructor() {
     super();
