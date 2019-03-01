@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import ListView from "../Views/ListView";
+import CreateNewView from "../Views/CreateNewView";
 
 import "../Styles/index.css";
+const URL = "https://fe-notes.herokuapp.com/note";
 
 class App extends Component {
   constructor() {
@@ -12,8 +14,6 @@ class App extends Component {
       notes: []
     };
   }
-
-  const URL = "https://fe-notes.herokuapp.com/note"
 
   componentDidMount() {
     axios
@@ -24,7 +24,7 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
-  createNewNote = () => {
+  createNewNote = note => {
     axios
       .post(`${URL}/create`, note)
       .then(response => console.log(response))

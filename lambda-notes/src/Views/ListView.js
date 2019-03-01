@@ -5,7 +5,7 @@ import Notes from "../Components/Notes";
 import styled from "styled-components";
 
 const StyledListView = styled.div`
-  display: flex;
+  display: none;
   width: 100%;
 `;
 

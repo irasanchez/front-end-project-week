@@ -14,7 +14,8 @@ class CreateNewNote extends React.Component {
   };
 
   handleSubmit = event => {
-    this.props.createNewNote(state);
+    event.preventDefault();
+    this.props.createNewNote(this.state);
   };
 
   render() {
