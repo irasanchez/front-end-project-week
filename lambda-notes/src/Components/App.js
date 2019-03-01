@@ -11,7 +11,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      notes: []
+      notes: [],
+      success: "",
+      error: ""
     };
   }
 
@@ -24,18 +26,11 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
-  createNewNote = note => {
-    axios
-      .post(`${URL}/create`, note)
-      .then(response => console.log(response))
-      .catch(error => console.log(error));
-  };
-
   render() {
     return (
       <div className="App">
         <ListView notes={this.state.notes} />
-        <CreateNewView createNewNote={this.createNewNote} />
+        <CreateNewView />
       </div>
     );
   }

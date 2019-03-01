@@ -1,11 +1,14 @@
 import React from "react";
+import axios from "axios";
+
+const URL = "https://fe-notes.herokuapp.com/note";
 
 class CreateNewNote extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newNoteTitle: "",
-      newNoteContent: ""
+      title: "",
+      textBody: ""
     };
   }
 
@@ -15,7 +18,17 @@ class CreateNewNote extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.createNewNote(this.state);
+    axios
+      .post(`${URL}/create`, this.state)
+      .then(response =>
+        this.setState({ success: response.data.success, error: "" })
+      )
+      .catch(error => this.setState({ success: "", error: error }));
+
+    this.setState({
+      title: "",
+      textBody: ""
+    });
   };
 
   render() {
@@ -23,18 +36,19 @@ class CreateNewNote extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input
           type="text"
-          value={this.state.newNoteTitle}
+          value={this.state.title}
           onChange={this.handleChange}
           placeholder="Note Title"
-          name="newNoteTitle"
+          name="title"
         />
         <input
           type="text"
-          value={this.state.newNoteContent}
+          value={this.state.textBody}
           onChange={this.handleChange}
           placeholder="Note Content"
+          name="textBody"
         />
-        <button>Save</button>
+        <button type="submit">Save</button>
       </form>
     );
   }
