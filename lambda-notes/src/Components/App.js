@@ -12,19 +12,30 @@ class App extends Component {
       notes: []
     };
   }
+
+  const URL = "https://fe-notes.herokuapp.com/note"
+
   componentDidMount() {
     axios
-      .get("https://fe-notes.herokuapp.com/note/get/all")
+      .get(`${URL}/get/all`)
       .then(response => {
         this.setState({ notes: response.data });
       })
       .catch(error => console.log(error));
   }
 
+  createNewNote = () => {
+    axios
+      .post(`${URL}/create`, note)
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
+  };
+
   render() {
     return (
       <div className="App">
         <ListView notes={this.state.notes} />
+        <CreateNewView createNewNote={this.createNewNote} />
       </div>
     );
   }
