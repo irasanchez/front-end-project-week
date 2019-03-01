@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import Note from "./Note";
 
@@ -7,12 +8,15 @@ const StyledNotes = styled.section`
   width: 80%;
   display: flex;
   flex-wrap: wrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
 `;
 
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 50px 5%;
+  border: 1px solid red;
 `;
 
 const Notes = props => {
@@ -32,6 +36,10 @@ const Notes = props => {
       </StyledNotes>
     </FlexContainer>
   );
+};
+
+Notes.propTypes = {
+  notes: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Notes;

@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 const StyledListView = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 const ListView = props => {
