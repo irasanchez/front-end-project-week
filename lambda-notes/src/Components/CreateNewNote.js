@@ -20,6 +20,7 @@ class CreateNewNote extends React.Component {
     event.preventDefault();
     axios
       .post(`${URL}/create`, this.state)
+      .get(`${URL}/get/all`)
       .then(response =>
         this.setState({ success: response.data.success, error: "" })
       )
