@@ -3,6 +3,8 @@ import axios from "axios";
 
 import ListView from "../Views/ListView";
 import CreateNewView from "../Views/CreateNewView";
+import NoteView from "../Views/NoteView";
+// import EditView from '../Views/EditView';
 
 import "../Styles/index.css";
 const URL = "https://fe-notes.herokuapp.com/note";
@@ -31,6 +33,7 @@ class App extends Component {
       <div className="App">
         <ListView notes={this.state.notes} />
         <CreateNewView />
+        <NoteView />
       </div>
     );
   }

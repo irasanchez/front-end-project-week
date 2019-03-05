@@ -2,19 +2,14 @@ import React from "react";
 import Nav from "../Components/Nav";
 import Notes from "../Components/Notes";
 
-import styled from "styled-components";
-
-const StyledListView = styled.div`
-  display: flex;
-  width: 100%;
-`;
+import View from "../Styles";
 
 const ListView = props => {
   return (
-    <StyledListView>
+    <View id="listview">
       <Nav />
       <Notes notes={props.notes} />
-    </StyledListView>
+    </View>
   );
 };
 

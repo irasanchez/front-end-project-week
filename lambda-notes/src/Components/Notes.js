@@ -1,8 +1,14 @@
 import React from "react";
-import styled from "styled-components";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import Note from "./Note";
+
+const FlexContainer = styled.div`
+  display: flex;
+  padding: 50px 5%;
+  border: 1px solid red;
+`;
 
 const StyledNotes = styled.section`
   width: 80%;
@@ -12,16 +18,9 @@ const StyledNotes = styled.section`
   font-size: 12px;
 `;
 
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 50px 5%;
-  border: 1px solid red;
-`;
-
 const Notes = props => {
   return (
-    <FlexContainer>
+    <FlexContainer className="views">
       <h2>Your Notes:</h2>
       <StyledNotes>
         {props.notes.map(n => (
