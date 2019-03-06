@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Route } from "react-router-dom";
 
 import ListView from "../Views/ListView";
 import CreateNewView from "../Views/CreateNewView";
 import NoteView from "../Views/NoteView";
 // import EditView from '../Views/EditView';
+import ExpandedNote from "../Components/ExpandedNote";
 
 import "../Styles/index.css";
 const URL = "https://fe-notes.herokuapp.com/note";
@@ -15,7 +17,8 @@ class App extends Component {
     this.state = {
       notes: [],
       success: "",
-      error: ""
+      error: "",
+      selected: false
     };
   }
 
@@ -23,6 +26,7 @@ class App extends Component {
     axios
       .get(`${URL}/get/all`)
       .then(response => {
+        console.log(response.data);
         this.setState({ notes: response.data });
       })
       .catch(error => console.log(error));
@@ -31,9 +35,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Route
+          path={`/note/:id`}
+          render={props => <ExpandedNote {...props} />}
+        />
         <ListView notes={this.state.notes} />
         <CreateNewView />
-        <NoteView />
+        <NoteView notes={this.state.notes} />
       </div>
     );
   }

@@ -4,21 +4,29 @@ import ExpandedNote from "../Components/ExpandedNote";
 
 import View from "../Styles";
 
-const NoteView = props => {
-  const editHandler = event => {
-    console.log(event.target);
-  };
+class NoteView extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  // const editHandler = event => {
+  //   console.log(event.target);
+  // };
 
-  const deleteHandler = event => {
-    console.log(event.target);
-  };
+  // const deleteHandler = event => {
+  //   console.log(event.target);
+  // };
+  componentDidMount() {
+    console.log(this.props);
+  }
 
-  return (
-    <View className="noteview">
-      <Nav />
-      <ExpandedNote />
-    </View>
-  );
-};
+  render() {
+    return (
+      <View className="noteview">
+        <Nav />
+        <ExpandedNote notes={this.props.notes} />
+      </View>
+    );
+  }
+}
 
 export default NoteView;
