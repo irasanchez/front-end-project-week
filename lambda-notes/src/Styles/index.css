@@ -4,17 +4,33 @@
   display: flex;
 }
 
-#createnewview {
-  display: none;
+nav {
+  height: 100vh;
 }
 
-/* #listview {
-  display: none;
+.button {
+  background-color: 2bc1c4;
+  color: #fff;
+}
+
+/* #createnewview {
+  
 } */
 
-#noteview {
+.listview {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-#editview {
-  display: none;
+/* #noteview {
+  
+} */
+
+/* .editview {
+} */
+
+.note-thumbnail {
+  background-color: #ffffff;
+  width: 25%;
 }

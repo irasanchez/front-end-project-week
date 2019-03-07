@@ -15,7 +15,7 @@ const FlexContainer = styled.div`
 `;
 
 const StyledNotes = styled.section`
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-wrap: wrap;
   text-overflow: ellipsis;
@@ -38,6 +38,7 @@ class Notes extends React.Component {
           {this.props.notes.map(n => (
             <Link to={`/note/${n._id}`} key={n._id}>
               <Note
+                className="note-thumbnail"
                 notes={n}
                 id={n._id}
                 title={n.title}

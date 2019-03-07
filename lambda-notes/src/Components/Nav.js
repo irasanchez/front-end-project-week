@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledNav = styled.nav`
   width: 20%;
@@ -18,8 +19,10 @@ const Nav = () => {
   return (
     <StyledNav>
       <h1>Lambda Notes</h1>
-      <StyledButton>View Notes</StyledButton>
-      <StyledButton>New Note</StyledButton>
+      <StyledButton className="button">View Notes</StyledButton>
+      <Link to="/new">
+        <StyledButton className="button">New Note</StyledButton>
+      </Link>
     </StyledNav>
   );
 };
