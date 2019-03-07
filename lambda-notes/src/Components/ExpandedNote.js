@@ -3,7 +3,9 @@ import styled from "styled-components";
 // import PropTypes from "prop-types";
 import axios from "axios";
 
-const StyledExpandedNote = styled.div`
+import { Link } from "react-router-dom";
+
+const StyledExpandedNote = styled.section`
   width: 80%;
   display: flex;
   border: 1px solid black;
@@ -15,15 +17,23 @@ class ExpandedNote extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      note: {}
+      note: {
+        id: "",
+        tags: [],
+        textBody: "",
+        title: ""
+      },
+      expandedNote: {}
     };
   }
   componentDidMount() {
-    console.log(this.props);
     if (this.props.match) {
       const id = this.props.match.params.id;
+      const expandedNote = this.props.notes.find(note => note._id === id);
       this.selectNote(id);
+      this.setState({ expandedNote: expandedNote });
     }
+    console.log(this.props);
   }
 
   selectNote = id => {
@@ -37,21 +47,14 @@ class ExpandedNote extends React.Component {
     return (
       <StyledExpandedNote className="expanded-note">
         <div className="actions">
-          <button>edit</button>
-          <button>delete</button>
+          <Link to="/edit">edit</Link> //change to link
+          <Link to="/delete">delete</Link>
         </div>
-        <h2>Note Name</h2>
-        <p>Note Content</p>
+        <h2>{this.state.expandedNote.title}</h2>
+        <p>{this.state.expandedNote.title}</p>
       </StyledExpandedNote>
     );
   }
 }
-
-// ExpandedNote.propTypes = {
-//   note: PropTypes.shape({
-//     title: PropTypes.number.isRequired,
-//     content: PropTypes.string.isRequired
-//   })
-// };
 
 export default ExpandedNote;

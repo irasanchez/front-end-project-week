@@ -6,7 +6,6 @@ import ListView from "../Views/ListView";
 import CreateNewView from "../Views/CreateNewView";
 import NoteView from "../Views/NoteView";
 // import EditView from '../Views/EditView';
-import ExpandedNote from "../Components/ExpandedNote";
 
 import "../Styles/index.css";
 const URL = "https://fe-notes.herokuapp.com/note";
@@ -35,13 +34,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* NoteView */}
         <Route
           path={`/note/:id`}
-          render={props => <ExpandedNote {...props} />}
+          render={props => <NoteView {...props} notes={this.state.notes} />}
         />
-        <ListView notes={this.state.notes} />
+        {/* ListView */}
+        {/* <ListView notes={this.state.notes} /> */}
+        <Route
+          exact
+          path={`/`}
+          render={props => <ListView {...props} notes={this.state.notes} />}
+        />
+
+        {/* CreateView */}
         <CreateNewView />
-        <NoteView notes={this.state.notes} />
       </div>
     );
   }

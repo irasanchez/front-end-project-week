@@ -29,19 +29,7 @@ class Notes extends React.Component {
       note: {}
     };
   }
-  componentDidMount() {
-    console.log(this.props);
-    const id = "5c7a457d2103f70015342779";
-    this.selectNote(id);
-  }
 
-  selectNote = id => {
-    console.log(id);
-    axios
-      .get(`${URL}/get/${id}`)
-      .then(response => console.log(response))
-      .catch(error => console.log(error));
-  };
   render() {
     return (
       <FlexContainer className="views">
