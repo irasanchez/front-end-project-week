@@ -7,7 +7,6 @@ import CreateNewView from "../Views/CreateNewView";
 import NoteView from "../Views/NoteView";
 // import EditView from '../Views/EditView';
 
-import "../Styles/index.css";
 const URL = "https://fe-notes.herokuapp.com/note";
 
 class App extends Component {
@@ -25,7 +24,6 @@ class App extends Component {
     axios
       .get(`${URL}/get/all`)
       .then(response => {
-        console.log(response.data);
         this.setState({ notes: response.data });
       })
       .catch(error => console.log(error));
@@ -38,23 +36,16 @@ class App extends Component {
         <Route
           path={`/note/:id`}
           render={props => (
-            <NoteView
-              className="noteview"
-              {...props}
-              notes={this.state.notes}
-            />
+            <NoteView className="views" {...props} notes={this.state.notes} />
           )}
         />
+
         {/* ListView */}
         <Route
           exact
           path={`/`}
           render={props => (
-            <ListView
-              className="listview"
-              {...props}
-              notes={this.state.notes}
-            />
+            <ListView className="views" {...props} notes={this.state.notes} />
           )}
         />
 
@@ -64,7 +55,7 @@ class App extends Component {
           path={`/new`}
           render={props => (
             <CreateNewView
-              className="createnewview"
+              className="views createnewview"
               {...props}
               notes={this.state.notes}
             />

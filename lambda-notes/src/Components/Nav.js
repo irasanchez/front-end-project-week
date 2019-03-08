@@ -1,29 +1,17 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-const StyledNav = styled.nav`
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid green;
-  /* remove this border later */
-`;
-
-const StyledButton = styled.button`
-  width: 90%;
-  background-color: seagreen;
-`;
 
 const Nav = () => {
   return (
-    <StyledNav>
+    <nav id="nav">
       <h1>Lambda Notes</h1>
-      <StyledButton className="button">View Notes</StyledButton>
-      <Link to="/new">
-        <StyledButton className="button">New Note</StyledButton>
+      <Link to="/" className="button">
+        View Your Notes
       </Link>
-    </StyledNav>
+      <Link to="/new" className="button">
+        + Create New Note
+      </Link>
+    </nav>
   );
 };
 

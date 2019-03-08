@@ -2,8 +2,6 @@ import React from "react";
 import Nav from "../Components/Nav";
 import ExpandedNote from "../Components/ExpandedNote";
 
-import View from "../Styles";
-
 class NoteView extends React.Component {
   constructor(props) {
     super(props);
@@ -21,10 +19,10 @@ class NoteView extends React.Component {
 
   render() {
     return (
-      <View className="noteview">
+      <section className="noteview">
         <Nav />
         <ExpandedNote notes={this.props.notes} {...this.props} />
-      </View>
+      </section>
     );
   }
 }
