@@ -37,10 +37,10 @@ class ExpandedNote extends React.Component {
 
   render() {
     return (
-      <section className="expanded-note">
+      <section className="noteview expanded-note">
         <div className="actions">
-          <Link to="/edit">edit</Link>
-          <Link to="/delete">delete</Link>
+          <Link to={`/note/:id/edit`}>edit</Link>
+          <Link to={`/note/:id/delete`}>delete</Link>
         </div>
         <h2>{this.state.expandedNote.title}</h2>
         <p>{this.state.expandedNote.title}</p>

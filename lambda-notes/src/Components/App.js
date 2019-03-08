@@ -35,18 +35,14 @@ class App extends Component {
         {/* NoteView */}
         <Route
           path={`/note/:id`}
-          render={props => (
-            <NoteView className="views" {...props} notes={this.state.notes} />
-          )}
+          render={props => <NoteView {...props} notes={this.state.notes} />}
         />
 
         {/* ListView */}
         <Route
           exact
           path={`/`}
-          render={props => (
-            <ListView className="views" {...props} notes={this.state.notes} />
-          )}
+          render={props => <ListView {...props} notes={this.state.notes} />}
         />
 
         {/* CreateView */}

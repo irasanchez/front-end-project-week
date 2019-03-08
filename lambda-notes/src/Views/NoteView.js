@@ -19,7 +19,7 @@ class NoteView extends React.Component {
 
   render() {
     return (
-      <section className="noteview">
+      <section className="views">
         <Nav />
         <ExpandedNote notes={this.props.notes} {...this.props} />
       </section>

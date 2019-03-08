@@ -115,18 +115,31 @@
 }
 
 /* NOTE VIEW STYLINGS */
-.noteview {
-  display: flex;
-}
-
 .expanded-note {
-  width: 80%;
+  width: 75vw;
   display: flex;
   flex-direction: column;
+  padding: 15px;
+}
+
+.expanded-note h2 {
+  margin: 0;
 }
 
 .actions {
   align-self: flex-end;
+}
+
+.actions a {
+  color: #575c61;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+.expanded-note p {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 /* .editview {
