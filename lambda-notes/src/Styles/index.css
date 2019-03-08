@@ -16,21 +16,28 @@
   height: 100%;
 }
 
+.views h2 {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0 25px 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
 #nav {
   background-color: #d8d8d8;
   width: 25vw;
+  min-width: 220px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #a0a0a0;
-  padding-left: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 #nav h1 {
+  width: 90%;
   font-size: 2.8rem;
   font-weight: bold;
-  margin: 0;
+  margin: 0 auto;
   padding: 20px 0;
 }
 #nav a {
@@ -48,6 +55,8 @@
 #nav a:hover {
   text-decoration: none;
 }
+
+/* HOME PAGE/ LIST VIEW STYLING */
 
 .listview {
   width: 75vw;
@@ -104,14 +113,20 @@
   text-overflow: ellipsis;
   max-width: 200px;
 }
-/* .noteview {
-  
-} */
+
+/* NOTE VIEW STYLINGS */
+.noteview {
+  display: flex;
+}
 
 .expanded-note {
   width: 80%;
   display: flex;
-  border: 1px solid black;
+  flex-direction: column;
+}
+
+.actions {
+  align-self: flex-end;
 }
 
 /* .editview {
