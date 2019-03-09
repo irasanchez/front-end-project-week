@@ -43,7 +43,7 @@ class ExpandedNote extends React.Component {
           <Link to={`/note/delete/${this.props.match.params.id}`}>delete</Link>
         </div>
         <h2>{this.state.expandedNote.title}</h2>
-        <p>{this.state.expandedNote.title}</p>
+        <p>{this.state.expandedNote.textBody}</p>
       </section>
     );
   }

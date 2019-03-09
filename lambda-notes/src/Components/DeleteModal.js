@@ -8,10 +8,14 @@ const URL = "https://fe-notes.herokuapp.com/note/";
 class DeleteModal extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      id: this.props.match.params.id
+    };
   }
 
   componentDidMount() {
     const id = this.props.match.params.id;
+    console.log(id);
     this.getNote(id);
     this.setState({ id: id });
   }
@@ -23,11 +27,11 @@ class DeleteModal extends React.Component {
       .catch(error => console.log(error));
   };
 
-  deleteMessage = () => {
+  deleteMessage = id => {
     axios
-      .delete(`${URL}delete/:id`)
+      .delete(`${URL}delete/${id}`)
       .then(response => {
-        console.log("deleteMessage", response);
+        console.log("deleteMessage", this.state.id);
         this.props.history.push("/");
       })
       .catch(err => console.log(err));
@@ -39,11 +43,10 @@ class DeleteModal extends React.Component {
         <div className="delete-modal">
           <p>Are you sure you want to delete this?</p>
           <div className="confirm">
-            <Link
-              to={`/note/delete/${this.props.match.params.id}`}
-              onClick={this.deleteMessage}
-            >
-              <button>delete</button>
+            <Link to={`/note/delete/${this.props.match.params.id}`}>
+              <button onClick={this.deleteMessage(this.state.id)}>
+                delete
+              </button>
             </Link>
             <button>no</button>
           </div>
