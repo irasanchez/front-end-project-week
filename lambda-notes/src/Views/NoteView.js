@@ -6,16 +6,6 @@ class NoteView extends React.Component {
   constructor(props) {
     super(props);
   }
-  // const editHandler = event => {
-  //   console.log(event.target);
-  // };
-
-  // const deleteHandler = event => {
-  //   console.log(event.target);
-  // };
-  // componentDidMount() {
-  //   console.log(this.props);
-  // }
 
   render() {
     return (

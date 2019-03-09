@@ -1,5 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import axios from "axios";
 
 import { Link } from "react-router-dom";
@@ -20,6 +19,7 @@ class ExpandedNote extends React.Component {
     };
   }
   componentDidMount() {
+    console.log(this.props.match);
     if (this.props.match) {
       const id = this.props.match.params.id;
       const expandedNote = this.props.notes.find(note => note._id === id);

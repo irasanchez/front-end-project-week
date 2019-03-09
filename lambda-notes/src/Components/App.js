@@ -35,21 +35,21 @@ class App extends Component {
         {/* ListView */}
         <Route
           exact
-          path={`/`}
+          path={"/"}
           render={props => <ListView {...props} notes={this.state.notes} />}
         />
 
         {/* NoteView */}
         <Route
           exact
-          path={`/note/:id`}
+          path={"/note/:id"}
           render={props => <NoteView {...props} notes={this.state.notes} />}
         />
 
         {/* CreateView */}
         <Route
           exact
-          path={`/note/create`}
+          path={"/notes/create"}
           render={props => (
             <CreateNewView {...props} notes={this.state.notes} />
           )}
@@ -58,7 +58,7 @@ class App extends Component {
         {/* EditView */}
         <Route
           exact
-          path={`/note/edit/:id`}
+          path={"/note/edit/:id"}
           render={props => <EditView {...props} notes={this.state.notes} />}
         />
       </div>

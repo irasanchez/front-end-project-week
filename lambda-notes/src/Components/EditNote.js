@@ -35,16 +35,27 @@ class EditNote extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  showUpdatedList = () => {
+    axios
+      .get(`${URL}get/all`)
+      .then(response => {
+        this.setState({ notes: response.data });
+      })
+      .catch(error => console.log(error));
+  };
+
   handleSubmit = event => {
     event.preventDefault();
     axios
       .put(`${URL}edit/${this.state.id}`, this.state)
-      .then(response =>
+      .then(response => {
         this.setState({
           title: response.data.title,
           textBody: response.data.textBody
-        })
-      )
+        });
+        this.showUpdatedList();
+        this.props.history.push("/");
+      })
       .catch(error => console.log(error));
 
     this.setState({

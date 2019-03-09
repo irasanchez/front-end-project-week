@@ -8,7 +8,7 @@ const Nav = () => {
       <Link to="/" className="button">
         View Your Notes
       </Link>
-      <Link to={`/note/create`} className="button">
+      <Link to={`notes/create`} className="button">
         + Create New Note
       </Link>
     </nav>
