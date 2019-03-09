@@ -6,6 +6,7 @@ import ListView from "../Views/ListView";
 import CreateNewView from "../Views/CreateNewView";
 import NoteView from "../Views/NoteView";
 import EditView from "../Views/EditView";
+import DeleteModal from "./DeleteModal";
 
 const URL = "https://fe-notes.herokuapp.com/note";
 
@@ -60,6 +61,12 @@ class App extends Component {
           exact
           path={"/note/edit/:id"}
           render={props => <EditView {...props} notes={this.state.notes} />}
+        />
+
+        {/* DeleteModal */}
+        <Route
+          path={`/note/delete/:id`}
+          render={props => <DeleteModal {...props} notes={this.state.notes} />}
         />
       </div>
     );
