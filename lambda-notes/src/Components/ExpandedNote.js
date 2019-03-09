@@ -23,24 +23,24 @@ class ExpandedNote extends React.Component {
     if (this.props.match) {
       const id = this.props.match.params.id;
       const expandedNote = this.props.notes.find(note => note._id === id);
-      this.selectNote(id);
+      this.getNote(id);
       this.setState({ expandedNote: expandedNote });
     }
   }
 
-  selectNote = id => {
+  getNote = id => {
     axios
       .get(`${URL}/get/${id}`)
       .then(response => console.log(response))
-      .catch(error => console.log(error));
+      .catch(error => console.log("expanded note", error));
   };
 
   render() {
     return (
       <section className="noteview expanded-note">
         <div className="actions">
-          <Link to={`/note/:id/edit`}>edit</Link>
-          <Link to={`/note/:id/delete`}>delete</Link>
+          <Link to={`/note/edit/${this.props.match.params.id}`}>edit</Link>
+          <Link to={`/note/delete/${this.props.match.params.id}`}>delete</Link>
         </div>
         <h2>{this.state.expandedNote.title}</h2>
         <p>{this.state.expandedNote.title}</p>

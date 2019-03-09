@@ -13,9 +13,9 @@ class NoteView extends React.Component {
   // const deleteHandler = event => {
   //   console.log(event.target);
   // };
-  componentDidMount() {
-    console.log(this.props);
-  }
+  // componentDidMount() {
+  //   console.log(this.props);
+  // }
 
   render() {
     return (

@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import ListView from "../Views/ListView";
 import CreateNewView from "../Views/CreateNewView";
 import NoteView from "../Views/NoteView";
-// import EditView from '../Views/EditView';
+import EditView from "../Views/EditView";
 
 const URL = "https://fe-notes.herokuapp.com/note";
 
@@ -32,12 +32,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* NoteView */}
-        <Route
-          path={`/note/:id`}
-          render={props => <NoteView {...props} notes={this.state.notes} />}
-        />
-
         {/* ListView */}
         <Route
           exact
@@ -45,17 +39,27 @@ class App extends Component {
           render={props => <ListView {...props} notes={this.state.notes} />}
         />
 
+        {/* NoteView */}
+        <Route
+          exact
+          path={`/note/:id`}
+          render={props => <NoteView {...props} notes={this.state.notes} />}
+        />
+
         {/* CreateView */}
         <Route
           exact
-          path={`/new`}
+          path={`/note/create`}
           render={props => (
-            <CreateNewView
-              className="views createnewview"
-              {...props}
-              notes={this.state.notes}
-            />
+            <CreateNewView {...props} notes={this.state.notes} />
           )}
+        />
+
+        {/* EditView */}
+        <Route
+          exact
+          path={`/note/edit/:id`}
+          render={props => <EditView {...props} notes={this.state.notes} />}
         />
       </div>
     );

@@ -8,7 +8,8 @@ class CreateNewNote extends React.Component {
     super(props);
     this.state = {
       title: "",
-      textBody: ""
+      textBody: "",
+      id: ""
     };
   }
 
@@ -20,10 +21,13 @@ class CreateNewNote extends React.Component {
     event.preventDefault();
     axios
       .post(`${URL}/create`, this.state)
-      .then(response =>
-        this.setState({ success: response.data.success, error: "" })
-      )
-      .catch(error => this.setState({ success: "", error: error }));
+      .then(response => {
+        this.setState({ success: response.data.success, error: "" });
+        console.log(response.data);
+      })
+      .catch(error => {
+        this.setState({ success: "", error: error });
+      });
 
     this.setState({
       title: "",
