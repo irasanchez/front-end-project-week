@@ -17,22 +17,24 @@ class Notes extends React.Component {
       <section className="listview">
         <h2>Your Notes:</h2>
         <div className="notes-grid">
-          {this.props.notes.map(n => (
-            <Link
-              to={`/note/${n._id}`}
-              key={n._id}
-              style={{ textDecoration: "none" }}
-            >
-              <Note
-                className="note-thumbnail"
-                notes={n}
-                id={n._id}
-                title={n.title}
-                tags={n.tags}
-                content={n.textBody}
-              />
-            </Link>
-          ))}
+          {this.props.notes
+            .map(n => (
+              <Link
+                to={`/note/${n._id}`}
+                key={n._id}
+                style={{ textDecoration: "none" }}
+              >
+                <Note
+                  className="note-thumbnail"
+                  notes={n}
+                  id={n._id}
+                  title={n.title}
+                  tags={n.tags}
+                  content={n.textBody}
+                />
+              </Link>
+            ))
+            .reverse()}
         </div>
       </section>
     );

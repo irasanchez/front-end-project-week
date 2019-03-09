@@ -27,11 +27,12 @@ class DeleteModal extends React.Component {
       .catch(error => console.log(error));
   };
 
-  deleteMessage = id => {
+  deleteMessage = event => {
+    event.preventDefault();
     axios
-      .delete(`${URL}delete/${id}`)
+      .delete(`${URL}delete/${this.state.id}`)
       .then(response => {
-        console.log("deleteMessage", this.state.id);
+        console.log(response);
         this.props.history.push("/");
       })
       .catch(err => console.log(err));
@@ -43,10 +44,8 @@ class DeleteModal extends React.Component {
         <div className="delete-modal">
           <p>Are you sure you want to delete this?</p>
           <div className="confirm">
-            <Link to={`/note/delete/${this.props.match.params.id}`}>
-              <button onClick={this.deleteMessage(this.state.id)}>
-                delete
-              </button>
+            <Link to={`/}`} onClick={this.deleteMessage}>
+              <button>yes</button>
             </Link>
             <button>no</button>
           </div>

@@ -90,6 +90,7 @@
   background-color: white;
   border: 1px solid #bcbcbc;
   padding: 10px 10px 20px 10px;
+  overflow: hidden;
 }
 
 .note-thumbnail:hover {
