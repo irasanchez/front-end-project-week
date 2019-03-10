@@ -44,10 +44,12 @@ class DeleteModal extends React.Component {
         <div className="delete-modal">
           <p>Are you sure you want to delete this?</p>
           <div className="confirm">
-            <Link to={`/}`} onClick={this.deleteMessage}>
-              <button>yes</button>
+            <Link to={`/`} onClick={this.deleteMessage}>
+              <button className="delete">Delete</button>
             </Link>
-            <button>no</button>
+            <Link to={`/`}>
+              <button className="cancel">No</button>
+            </Link>
           </div>
         </div>
       </div>
