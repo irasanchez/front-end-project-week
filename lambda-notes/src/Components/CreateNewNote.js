@@ -38,19 +38,22 @@ class CreateNewNote extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <h2>Create New Note:</h2>
         <input
           type="text"
           value={this.state.title}
           onChange={this.handleChange}
           placeholder="Note Title"
           name="title"
+          className="title"
         />
-        <input
+        <textarea
           type="text"
           value={this.state.textBody}
           onChange={this.handleChange}
           placeholder="Note Content"
           name="textBody"
+          className="textBody"
         />
         <button type="submit">Save</button>
       </form>
