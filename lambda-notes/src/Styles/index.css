@@ -1,0 +1,234 @@
+/* global -- see src/index.css for reset */
+
+.App {
+  max-width: 1800px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  color: #575c61;
+  background-color: #f3f3f3;
+  overflow: hidden;
+  position: relative;
+}
+
+.views {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.views h2 {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0 25px 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+#nav {
+  background-color: #d8d8d8;
+  width: 25vw;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #a0a0a0;
+}
+
+#nav h1 {
+  width: 90%;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+#nav a,
+.submit,
+button {
+  background-color: #2bc1c4;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 5%;
+  width: 90%;
+  border: 2px solid #a0a0a0;
+  text-align: center;
+  margin: 10px auto;
+}
+
+#nav a:hover {
+  text-decoration: none;
+}
+
+/* HOME PAGE/ LIST VIEW STYLING */
+
+.listview {
+  width: 75vw;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.listview h2 {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0 25px 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.notes-grid {
+  width: 90%;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.note-thumbnail {
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+  background-color: white;
+  border: 1px solid #bcbcbc;
+  padding: 10px 10px 20px 10px;
+  overflow: hidden;
+}
+
+.note-thumbnail:hover {
+  text-decoration: none;
+}
+
+.note-thumbnail h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.note-thumbnail hr {
+  border-top: 2px solid #bcbcbc;
+}
+
+.note-thumbnail p {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+/* NOTE VIEW STYLINGS */
+.expanded-note {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.expanded-note h2 {
+  margin: 0;
+}
+
+.actions {
+  align-self: flex-end;
+}
+
+.actions a {
+  color: #575c61;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+.expanded-note p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* EDIT/CREATE VIEW STYLINGS */
+
+.editview {
+  display: flex;
+}
+
+.editnote {
+  flex-direction: column;
+  padding: 0 5%;
+  width: 100%;
+  font-size: 0.8 rem;
+}
+
+.views input,
+.views textarea {
+  border-radius: 5px;
+  margin: 10px 0;
+  border: 1px solid #bcbcbc;
+  padding: 5px;
+  color: #575c61;
+}
+
+.views .title {
+  width: 60%;
+}
+
+.views .textBody {
+  width: 100%;
+  height: 400px;
+  text-anchor: 1;
+}
+
+.editnote .submit {
+  width: 40%;
+}
+
+.createnew {
+  display: flex;
+}
+
+.createnew form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* DELETE MODAL STYLINGS */
+
+.delete-container {
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 73.7%, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.delete-container .delete-modal {
+  background-color: white;
+  border: 1px solid #575c61;
+  width: 70%;
+  height: 50%;
+  margin: 0auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.confirm {
+  width: 70%;
+  display: flex;
+}
+
+.confirm a {
+  width: 100%;
+  margin: 0;
+}
+
+.delete {
+  background-color: red;
+}
